@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <title>ЦСР — металлоконструкции и металлообработка в Казани (демо)</title>
+    <meta
+      name="description"
+      content="Демонстрационный концепт главной для ООО «Центр сварочного решения». Не публичный сайт."
+    />
+    <link rel="icon" href="assets/web/logo.png" />
+    <style>
+      :root {
+        --navy: #102a3b;
+        --navy-2: #0a1c28;
+        --steel: #739299;
+        --ink: #1a1f24;
+        --muted: #5b6670;
+        --line: #d9e0e5;
+        --bg: #f4f6f8;
+        --white: #ffffff;
+        --accent: #1f4b66;
+        --max: 1120px;
+        --radius: 10px;
+        --shadow: 0 10px 30px rgba(16, 42, 59, 0.12);
+        --font:
+          "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial,
+          sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--ink);
+        background: var(--white);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(100% - 2rem, var(--max));
+        margin-inline: auto;
+      }
+      .demo-bar {
+        background: #fff8e8;
+        border-bottom: 1px solid #f0dfb0;
+        color: #6a5416;
+        font-size: 0.85rem;
+        padding: 0.55rem 0;
+        text-align: center;
+      }
+      .top {
+        background: var(--navy);
+        color: #d7e2ea;
+        font-size: 0.9rem;
+        padding: 0.45rem 0;
+      }
+      .top .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.25rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .top a {
+        color: #fff;
+        font-weight: 600;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.7rem 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        min-width: 0;
+      }
+      .brand img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        flex: 0 0 auto;
+      }
+      .brand strong {
+        display: block;
+        font-size: 0.95rem;
+        color: var(--navy);
+        line-height: 1.2;
+      }
+      .brand span {
+        display: block;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .nav-links {
+        display: none;
+        gap: 1rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+      .nav-cta {
+        display: flex;
+        gap: 0.55rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        border-radius: 999px;
+        padding: 0.7rem 1.1rem;
+        font-weight: 700;
+        font-size: 0.92rem;
+        border: 0;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          background 0.15s ease,
+          color 0.15s ease;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-primary {
+        background: var(--navy);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--accent);
+      }
+      .btn-light {
+        background: #fff;
+        color: var(--navy);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--navy);
+        border: 1.5px solid #b7c5d0;
+      }
+      .btn-discuss {
+        background: #fff;
+        color: var(--navy);
+        border: 2px solid #c9a227;
+        box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.18);
+      }
+      .hero {
+        position: relative;
+        color: #fff;
+        min-height: min(78vh, 680px);
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        background: var(--navy-2);
+      }
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(10, 28, 40, 0.88) 0%,
+            rgba(10, 28, 40, 0.55) 48%,
+            rgba(10, 28, 40, 0.35) 100%
+          ),
+          url("assets/web/hero.jpg") center/cover no-repeat;
+      }
+      .hero-inner {
+        position: relative;
+        padding: 4.5rem 0 3.2rem;
+        max-width: 640px;
+      }
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #c9d7e2;
+        margin-bottom: 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 0.3rem 0.65rem;
+        border-radius: 999px;
+      }
+      .hero h1 {
+        margin: 0 0 0.85rem;
+        font-size: clamp(1.7rem, 4.5vw, 2.7rem);
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .hero p {
+        margin: 0 0 1.4rem;
+        font-size: 1.05rem;
+        color: #dce6ee;
+        max-width: 34em;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-bottom: 1.4rem;
+      }
+      .hero-facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+      .fact {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: var(--radius);
+        padding: 0.75rem 0.85rem;
+      }
+      .fact b {
+        display: block;
+        font-size: 1.25rem;
+      }
+      .fact span {
+        font-size: 0.82rem;
+        color: #c9d7e2;
+      }
+      section {
+        padding: 3.4rem 0;
+      }
+      .section-head {
+        margin-bottom: 1.5rem;
+        max-width: 40rem;
+      }
+      .section-head h2 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.4rem, 3vw, 1.9rem);
+        color: var(--navy);
+        letter-spacing: -0.01em;
+      }
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .services {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .card img {
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 1.1rem 1.15rem 1.25rem;
+      }
+      .card h3 {
+        margin: 0 0 0.45rem;
+        font-size: 1.1rem;
+        color: var(--navy);
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .bg-soft {
+        background: var(--bg);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+      .stat {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1.1rem;
+      }
+      .stat b {
+        display: block;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        color: var(--navy);
+        line-height: 1.1;
+      }
+      .stat span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+      }
+      .gallery figure {
+        margin: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #ddd;
+      }
+      .gallery img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+      .gallery figcaption {
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding: 0.45rem 0.55rem 0.65rem;
+        background: var(--white);
+      }
+      .steps {
+        display: grid;
+        gap: 0.8rem;
+        counter-reset: step;
+      }
+      .step {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.9rem;
+        align-items: start;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem 1.05rem;
+      }
+      .step::before {
+        counter-increment: step;
+        content: counter(step);
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: var(--navy);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 0.9rem;
+        flex: 0 0 auto;
+      }
+      .step h3 {
+        margin: 0 0 0.25rem;
+        font-size: 1rem;
+        color: var(--navy);
+      }
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+      .clients {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.7rem;
+        align-items: center;
+      }
+      .clients .logo-slot {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        min-height: 76px;
+        display: grid;
+        place-items: center;
+        padding: 0.7rem;
+      }
+      .clients img {
+        max-height: 42px;
+        width: auto;
+        object-fit: contain;
+        filter: grayscale(1);
+        opacity: 0.85;
+      }
+      .contact-grid {
+        display: grid;
+        gap: 1rem;
+      }
+      .contact-card,
+      .cta-card {
+        border-radius: 16px;
+        padding: 1.3rem 1.2rem;
+      }
+      .contact-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+      }
+      .contact-card h2 {
+        margin: 0 0 0.8rem;
+        color: var(--navy);
+        font-size: 1.45rem;
+      }
+      .contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.65rem;
+      }
+      .contact-list li {
+        color: var(--muted);
+      }
+      .contact-list strong {
+        display: block;
+        color: var(--ink);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .contact-list a {
+        color: var(--navy);
+        font-weight: 700;
+        word-break: break-word;
+      }
+      .cta-card {
+        background: linear-gradient(145deg, var(--navy), #1a4058);
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+      .cta-card h3 {
+        margin: 0 0 0.55rem;
+        font-size: 1.25rem;
+      }
+      .cta-card p {
+        margin: 0 0 1rem;
+        color: #d5e2eb;
+      }
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+      }
+      footer {
+        background: var(--navy-2);
+        color: #9fb1bd;
+        padding: 1.4rem 0 2rem;
+        font-size: 0.85rem;
+      }
+      footer .wrap {
+        display: grid;
+        gap: 0.5rem;
+      }
+      footer strong {
+        color: #fff;
+      }
+      @media (min-width: 720px) {
+        .nav-links {
+          display: flex;
+        }
+        .hero-facts {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .services {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .stats {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .gallery {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .steps {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .contact-grid {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+      }
+      @media (min-width: 960px) {
+        .services {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .clients {
+          grid-template-columns: repeat(8, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 420px) {
+        .wrap {
+          width: min(100% - 1.25rem, var(--max));
+        }
+        .btn {
+          padding: 0.65rem 0.9rem;
+          font-size: 0.88rem;
+        }
+        .brand span {
+          display: none;
+        }
+        .clients {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-bar">
+      Демо-концепт новой главной для ЦСР · страница закрыта от поисковиков
+      (noindex)
+    </div>
+    <div class="top">
+      <div class="wrap">
+        <span>г. Казань, Юго-западная, 7 · пн–пт 8:00–17:00</span>
+        <span>
+          <a href="tel:+79376201593">+7 937 620-15-93</a>
+          ·
+          <a href="mailto:ressvar@mail.ru">ressvar@mail.ru</a>
+        </span>
+      </div>
+    </div>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top">
+          <img src="assets/web/logo.png" width="48" height="48" alt="ЦСР" />
+          <div>
+            <strong>Центр сварочного решения</strong>
+            <span>Металлоконструкции · металлообработка</span>
+          </div>
+        </a>
+        <nav class="nav-links" aria-label="Разделы">
+          <a href="#services">Услуги</a>
+          <a href="#proof">Цифры</a>
+          <a href="#works">Работы</a>
+          <a href="#process">Как работаем</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-outline" href="tel:+79376201593">Позвонить</a>
+          <a class="btn btn-primary" href="#contacts">Оставить заявку</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+          <div class="eyebrow">Казань · Республика Татарстан</div>
+          <h1>ЦСР — металлоконструкции, металлообработка и сварка</h1>
+          <p>
+            Изготовление металлоконструкций, обработка металла по чертежам
+            заказчика, трубопроводы и сварочные работы. Собственное производство
+            на Юго-западной, 7.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#contacts">Обсудить задачу</a>
+            <a
+              class="btn btn-outline"
+              style="border-color: rgba(255, 255, 255, 0.45); color: #fff"
+              href="tel:+79376201593"
+              >+7 937 620-15-93</a
+            >
+          </div>
+          <div class="hero-facts">
+            <div class="fact"><b>15</b><span>лет на рынке</span></div>
+            <div class="fact"><b>1 520</b><span>т металла</span></div>
+            <div class="fact"><b>986</b><span>заказов</span></div>
+            <div class="fact"><b>42</b><span>проекта</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Что делаем — и какой результат получаете</h2>
+            <p>
+              Четыре направления с сайта ЦСР: от резки и обработки до
+              конструкций, трубопроводов и сварки.
+            </p>
+          </div>
+          <div class="services">
+            <article class="card">
+              <img
+                src="assets/web/cutting.jpg"
+                alt="Резка металла на производстве ЦСР"
+                width="600"
+                height="375"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Металлообработка</h3>
+                <p>
+                  Обработка металла по ТЗ, чертежам, эскизам, 2D и 3D-проектам.
+                  В том числе на ЧПУ-станках.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <img
+                src="assets/web/structures.jpg"
+                alt="Металлоконструкции ЦСР"
+                width="600"
+                height="375"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Металлоконструкции</h3>
+                <p>
+                  Изготовление элементов несущих конструкций зданий, ферм,
+                  каркасов и колонн для строительства.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <img
+                src="assets/web/plasma.jpg"
+                alt="Работы по металлу"
+                width="600"
+                height="375"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Трубопроводы</h3>
+                <p>
+                  Сварка, резка, монтаж и изготовление узлов: технологические
+                  трубопроводы, теплотрассы, пожаротушение.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <img
+                src="assets/web/weld.jpg"
+                alt="Сварка на площадке ЦСР"
+                width="600"
+                height="375"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Сварка металла</h3>
+                <p>
+                  Сварочные работы любой сложности в составе производственных и
+                  монтажных задач компании.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof" class="bg-soft">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Цифры с текущего сайта</h2>
+            <p>Показатели, которые ЦСР уже публикует о своей работе.</p>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <b>1 520</b><span>тонн переработанного металла</span>
+            </div>
+            <div class="stat"><b>42</b><span>реализованных проекта</span></div>
+            <div class="stat"><b>15</b><span>лет на рынке</span></div>
+            <div class="stat"><b>986</b><span>выполненных заказов</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="works">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Собственные фото производства</h2>
+            <p>
+              Кадры с площадки ЦСР: цех, резка, конструкции и сварочные работы.
+            </p>
+          </div>
+          <div class="gallery">
+            <figure>
+              <img
+                src="assets/web/workshop.jpg"
+                alt="Цех ЦСР"
+                width="400"
+                height="300"
+                loading="lazy"
+              />
+              <figcaption>Производственный цех</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/web/shop2.jpg"
+                alt="Работы в цехе ЦСР"
+                width="400"
+                height="300"
+                loading="lazy"
+              />
+              <figcaption>Работы в цехе</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/web/shop3.jpg"
+                alt="Металлоконструкции на площадке"
+                width="400"
+                height="300"
+                loading="lazy"
+              />
+              <figcaption>Конструкции на площадке</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/web/cutting.jpg"
+                alt="Резка металла"
+                width="400"
+                height="300"
+                loading="lazy"
+              />
+              <figcaption>Резка металла</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="bg-soft">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Как обычно идёт работа</h2>
+            <p>
+              Короткий путь от заявки до готового изделия — по логике услуг на
+              сайте ЦСР.
+            </p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div>
+                <h3>Заявка и исходные данные</h3>
+                <p>
+                  Звонок или письмо на ressvar@mail.ru. Нужны чертежи, эскизы
+                  или ТЗ.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div>
+                <h3>Согласование работ</h3>
+                <p>
+                  Определяем вид работ: металлообработка, конструкции,
+                  трубопроводы или сварка.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div>
+                <h3>Изготовление на своей площадке</h3>
+                <p>
+                  Производство в Казани, Юго-западная, 7. Режим: пн–пт
+                  8:00–17:00.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div>
+                <h3>Сдача результата</h3>
+                <p>Готовые изделия и узлы по согласованному объёму заказа.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clients">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Клиенты, чьи логотипы размещены на сайте</h2>
+            <p>
+              На сайте ЦСР указано: за 10+ лет работы клиентами стали
+              организации, представленные в блоке партнёров.
+            </p>
+          </div>
+          <div class="clients" aria-label="Логотипы клиентов с сайта ЦСР">
+            <div class="logo-slot">
+              <img
+                src="assets/web/client-logo-2-1.png"
+                alt="Клиент ЦСР"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-slot">
+              <img
+                src="assets/web/client-logo-dsm.png"
+                alt="Клиент ЦСР"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-slot">
+              <img
+                src="assets/web/client-logo10.png"
+                alt="Клиент ЦСР"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-slot">
+              <img
+                src="assets/web/client-logo.png"
+                alt="Клиент ЦСР"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-slot">
+              <img
+                src="assets/web/client-logo-2.png"
+                alt="Клиент ЦСР"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-slot">
+              <img
+                src="assets/web/client-logo-1.png"
+                alt="Клиент ЦСР"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="bg-soft">
+        <div class="wrap contact-grid">
+          <div class="contact-card">
+            <h2>Контакты</h2>
+            <ul class="contact-list">
+              <li>
+                <strong>Телефон</strong>
+                <a href="tel:+79376201593">+7 937 620-15-93</a>
+              </li>
+              <li>
+                <strong>Почта</strong>
+                <a href="mailto:ressvar@mail.ru">ressvar@mail.ru</a>
+              </li>
+              <li>
+                <strong>Адрес</strong>
+                г. Казань, Юго-западная, 7
+              </li>
+              <li>
+                <strong>Режим работы</strong>
+                пн–пт 8:00–17:00
+              </li>
+              <li>
+                <strong>Реквизиты</strong>
+                ООО «Центр сварочного решения» · ИНН 1648050606 · КПП 164801001
+              </li>
+            </ul>
+            <div
+              style="
+                margin-top: 1.1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.6rem;
+              "
+            >
+              <a class="btn btn-primary" href="tel:+79376201593">Позвонить</a>
+              <a class="btn btn-outline" href="mailto:ressvar@mail.ru"
+                >Написать на почту</a
+              >
+            </div>
+          </div>
+          <div class="cta-card">
+            <h3>Нужен полноценный сайт под заявки?</h3>
+            <p>
+              Это демонстрация новой главной на ваших фото, цифрах и контактах.
+              Можно собрать рабочий сайт с каталогом услуг, галереей и формой
+              заявки.
+            </p>
+            <div class="cta-actions">
+              <a
+                class="btn btn-discuss"
+                href="mailto:ressvar@mail.ru?subject=%D0%9E%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%86%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%A6%D0%A1%D0%A0"
+                >Обсудить полноценный сайт</a
+              >
+              <a
+                class="btn btn-light"
+                href="https://center-sr.ru/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Текущий сайт</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <strong>ООО «Центр сварочного решения» (ЦСР)</strong>
+        <span
+          >Демонстрационный концепт. Материалы взяты с center-sr.ru. Страница
+          закрыта от индексации.</span
+        >
+        <span>© демо · noindex</span>
+      </div>
+    </footer>
+  </body>
+</html>
